@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gra w dzika</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="mistakes"><div class="x">X</div><div class="x">X</div><div class="x">X</div></div>
+    <div id="scoreshow">SCORE<br>0</div>
+    <div id="img"><img src="boar.png" onclick="check()"></div>
+    
+    
+    <div class="slidecontainer">
+        Choose the time intervals [s]<br>
+        <input type="range" min="1" max="10" value="5" class="slider">
+        <span id="Value">5</span>
+    </div>
+    <div id="numbers">
+        77
+    </div>
+    <button onclick="start()" id="start">
+        START
+    </button>
+    <div class="block" id="blockrules">
+        <div id="rulesbox">
+            <div>
+                <p id="header">Rules</p><br>
+                <div class="rules">Numbers will appear on screen in a chosen tempo.
+                    If the number on screen has a 7 in it or is divisible by 7,
+                    pressing the Boar will grant a point. Skipping a number that does not meet the requirements will also grant a point.
+                     Pressing a wrong number will deduct a point.
+                    Should you click a wrong number 3 times, the game will end. Missing a number with a 7
+                    or that is divisible by 7 will instantly finish the game.
+                </div>
+            </div>
+            <button class="continue" onclick="rules()">Continue</button>
+        </div>
+    </div>
+    <div class="block" id="gameend">
+            <div id="gamebox">
+                GAME OVER
+
+                <div class="rules" id="results"></div>
+            </div>
+            <button class="continue" onclick="gameoverhide()">Continue</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
