@@ -112,6 +112,10 @@ img {
     height: 40vh;
     cursor: pointer;
 }
+img:hover {
+    height: 41vh;
+    transition-duration: 100ms;
+}
 #start {
     text-align: center;
     font-size: 2vw;
