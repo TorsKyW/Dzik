@@ -82,7 +82,7 @@ function game(){
     if(starcik==1){
         passivepoints();
         scoreupdate();
-        if(failedclick>=3 || (randomnum%7==0 && checkclick !=1) || (hasseven()==true && checkclick != 1)){
+        if(failedclick>=3 || (randomnum%7==0 && checkclick !=1) || (hasseven() && checkclick != 1)){
             clearInterval(interval);
             starcik=0;
             clearInterval(timer);
@@ -117,17 +117,7 @@ function start(){
 function check(){
     if (starcik==1){
         checkclick=1;
-        if(randomnum%7==0){
-            score++;
-            licznik++;
-            suma+=secs;
-            resettimer();
-            clearInterval(interval);
-            game();
-            interval=setInterval(game, constdiff);
-            return;
-        }
-        if(hasseven()==false){
+        if(!hasseven() && randomnum%7!=0){
             failedclick++;
             if(score>0){score--;}
             clearInterval(interval);
