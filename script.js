@@ -82,23 +82,9 @@ function game(){
     if(starcik==1){
         passivepoints();
         scoreupdate();
-        if(failedclick>=3){
+        if(failedclick>=3 || (randomnum%7==0 && checkclick !=1) || (hasseven()==true && checkclick != 1)){
             clearInterval(interval);
             starcik=0;
-            clearInterval(timer);
-            gameovershow();
-            return;
-        }
-        if(randomnum%7==0 && checkclick !=1){
-            starcik=0;
-            clearInterval(interval);
-            clearInterval(timer);
-            gameovershow();
-            return;
-        }
-        if(hasseven()==true && checkclick != 1){
-            starcik=0;
-            clearInterval(interval);
             clearInterval(timer);
             gameovershow();
             return;
@@ -141,7 +127,7 @@ function check(){
             interval=setInterval(game, constdiff);
             return;
         }
-        else if(hasseven()==false){
+        if(hasseven()==false){
             failedclick++;
             if(score>0){score--;}
             clearInterval(interval);
